@@ -1,6 +1,8 @@
 package ru.startandroid.booknet;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
     private String author;
     private String genre;
     private String country;
