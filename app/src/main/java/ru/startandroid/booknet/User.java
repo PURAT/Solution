@@ -31,8 +31,15 @@ public class User {
     public List<Book> getUserStoryList() {
         return userStoryList;
     }
-    public void rateBook(Book book, int rate){
-        book.setRating(rate);
+
+    public int rateBook(Book book, int rate){
+        book.getRateData().add(rate);
+        int sum = 0;
+        for(Integer i: book.getRateData()){
+            sum+=i;
+        }
+        int rating = sum/book.getRateData().size();
+        return rating;
     }
     public void markAsFavotite(Book book){
         this.favoriteList.add(book);

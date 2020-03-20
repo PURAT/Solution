@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "673599309033",
+    "firebase_url": "https://booknet-e7432.firebaseio.com",
+    "project_id": "booknet-e7432",
+    "storage_bucket": "booknet-e7432.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673599309033:android:baecdc243cc261dccf1c78",
+        "android_client_info": {
+          "package_name": "ru.startandroid.booknet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673599309033-iqa1o2jsns53rp6mbbcev14dgu6rvlho.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.startandroid.booknet",
+            "certificate_hash": "b3c2306feb73ba34f4b5e0813dd4d53621cd4282"
+          }
+        },
+        {
+          "client_id": "673599309033-ovsiek59sfej8h6euftha4dcsslri24p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvtpW-UC9LZdjJh0sJ7kGmimRHjd5lnk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673599309033-ovsiek59sfej8h6euftha4dcsslri24p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
