@@ -1,4 +1,4 @@
-package ru.startandroid.booknet;
+package ru.startandroid.booknet.models;
 
 import java.io.Serializable;
 
