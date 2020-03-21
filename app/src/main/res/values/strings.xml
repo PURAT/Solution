@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BookNet</string>
+
+    <string name="view_navigation_open">Open</string>
+    <string name="view_navigation_close">Close</string>
+
+    <string name="menu_item_1">Аккаунт</string>
+    <string name="menu_item_2">Корзина</string>
+    <string name="menu_item_3">Настройки</string>
+    <string name="menu_item_4">О приложении</string>
+
 </resources>
