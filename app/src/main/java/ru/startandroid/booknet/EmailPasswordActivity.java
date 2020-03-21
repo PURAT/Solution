@@ -39,6 +39,7 @@ public class EmailPasswordActivity extends AppCompatActivity {
         String emailText = email.getText().toString();
         String passwordText = password.getText().toString();
         createAccount(emailText,passwordText);
+        startActivity(intent);
     }
 
     @Override
@@ -47,6 +48,7 @@ public class EmailPasswordActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
     }
+
     public void createAccount(String email, String password){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -56,8 +58,6 @@ public class EmailPasswordActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(EmailPasswordActivity.this,"Успешно",Toast.LENGTH_SHORT).show();
-                            startActivity(intent);
-
                             //without UI
                         } else {
                             // If sign in fails, display a message to the user.
@@ -76,7 +76,6 @@ public class EmailPasswordActivity extends AppCompatActivity {
                             Toast.makeText(EmailPasswordActivity.this,"Успешно",Toast.LENGTH_SHORT);
                             //without UI
                             FirebaseUser user = mAuth.getCurrentUser();
-                            startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(EmailPasswordActivity.this,"Не успешно",Toast.LENGTH_SHORT);

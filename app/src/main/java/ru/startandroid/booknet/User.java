@@ -1,9 +1,11 @@
 package ru.startandroid.booknet;
 
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class User{
     private  String name;
     private int age;
     private List<Book> userStoryList = new ArrayList<>();

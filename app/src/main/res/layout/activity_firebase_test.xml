@@ -18,6 +18,11 @@
         android:layout_height="wrap_content"
         android:hint="author"/>
     <EditText
+        android:id="@+id/bookGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="bookGenre"/>
+    <EditText
         android:id="@+id/bookCountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +32,7 @@
         android:id="@+id/addButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add"
-        android:onClick="onClickAddBook"/>
+        android:text="Send"
+        android:onClick="onClickSend"/>
 
 </LinearLayout>

@@ -24,13 +24,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
+    public static User user = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
     public void goSigning(View view){
-        Intent intent = new Intent(this, FireBaseTestActivity.class);
+        Intent intent = new Intent(this, EmailPasswordActivity.class);
         startActivity(intent);
     }
 
