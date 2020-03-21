@@ -32,14 +32,13 @@ public class User {
         return userStoryList;
     }
 
-    public int rateBook(Book book, int rate){
+    public void rateBook(Book book, int rate){
         book.getRateData().add(rate);
         int sum = 0;
         for(Integer i: book.getRateData()){
             sum+=i;
         }
-        int rating = sum/book.getRateData().size();
-        return rating;
+        book.setRating(sum/book.getRateData().size());
     }
     public void markAsFavotite(Book book){
         this.favoriteList.add(book);

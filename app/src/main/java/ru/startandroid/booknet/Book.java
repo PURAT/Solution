@@ -5,10 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book implements Serializable {
+    private String id;
     private String author;
     private String genre;
     private String country;
     private String name;
+    private List<Integer> rateData = new ArrayList<>();
+    private int rating;
 
     public List<Integer> getRateData() {
         return rateData;
@@ -17,15 +20,16 @@ public class Book implements Serializable {
     public int getRating() {
         return rating;
     }
+    public void setRating(int rating){
+        this.rating = rating;
+    }
 
-    private List<Integer> rateData = new ArrayList<>();
-    private int rating;
-
-    public Book(String name, String author, String genre, String country) {
+    public Book(String id, String name, String author, String genre, String country) {
         this.author = author;
         this.genre = genre;
         this.country = country;
         this.name = name;
+        this.id = id;
     }
 
     public String getName() {

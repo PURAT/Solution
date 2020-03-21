@@ -3,6 +3,7 @@ package ru.startandroid.booknet;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -15,12 +16,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class EmailPasswordActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private Button signButton;
     private EditText email;
     private EditText password;
+    private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,7 @@ public class EmailPasswordActivity extends AppCompatActivity {
         signButton= (Button)findViewById(R.id.signButton);
         email = (EditText)findViewById(R.id.email);
         password = (EditText) findViewById(R.id.password);
+        intent = new Intent(this, FireBaseTestActivity.class);
     }
 
     public void onClickSign(View view){
@@ -52,6 +56,8 @@ public class EmailPasswordActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(EmailPasswordActivity.this,"Успешно",Toast.LENGTH_SHORT).show();
+                            startActivity(intent);
+
                             //without UI
                         } else {
                             // If sign in fails, display a message to the user.
@@ -70,6 +76,7 @@ public class EmailPasswordActivity extends AppCompatActivity {
                             Toast.makeText(EmailPasswordActivity.this,"Успешно",Toast.LENGTH_SHORT);
                             //without UI
                             FirebaseUser user = mAuth.getCurrentUser();
+                            startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(EmailPasswordActivity.this,"Не успешно",Toast.LENGTH_SHORT);
