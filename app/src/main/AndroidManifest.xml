@@ -2,33 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.startandroid.booknet">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Catalogue_Activity"></activity>
-        <activity android:name=".activity.BookPageActivity" />
-        <activity
-            android:name=".activity.EmailPasswordActivity"
-            android:screenOrientation="unspecified" />
+
         <activity
             android:name=".activity.FireBaseTestActivity"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ActivityItem3"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".activity.ActivityItem4"
-            android:screenOrientation="unspecified" />
-        <activity
-            android:name=".activity.ActivityItem2"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="unspecified">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,11 +32,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.ActivityItem2"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity.BaseActivity"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MenuActivity"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

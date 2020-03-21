@@ -1,79 +1,92 @@
 package ru.startandroid.booknet.models;
 
-import androidx.annotation.NonNull;
-
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ru.startandroid.booknet.models.Book;
 
-import static ru.startandroid.booknet.constants.Constants.*;
+public class User {
+    private String name;
+    private String surname;
+    private int age;
+    private String password;
+    private String email;
 
-public class User{
-    private static String name;
-    private static String email;
-    private static int age;
-    private static List<Book> userStoryList = new ArrayList<>();
-    private static List<String> interestsList = new ArrayList<>();
-    private static List<Book> favoriteList = new ArrayList<>();
+    private List<String> interestsList = new ArrayList<>();
+    private List<Book> favoriteList = new ArrayList<>();
+    private List<Book> userStoryList = new ArrayList<>();
 
-    public User(){}
-
-    public User(String email) {
-        User.email = email;
+    public User() {
     }
 
-    public static void setName(String name) {
-        User.name = name;
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
-    public static String getName() {
-        return name;
+
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
-    public static List<Book> getFavoriteList() {
-        return favoriteList;
+
+    public void setName(String name) {
+        this.name = name;
     }
-    public static void setAge(int age) {
-        if(age>0){
-            if(age<200) {
-                User.age = age;
-            }
-        }
+
+
+    public String getSurname() {
+        return surname;
     }
-    public static int getAge() {
-        return age;
+
+    public String getPassword() {
+        return password;
     }
-    public static List<String> getInterestsList() {
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<String> getInterestsList() {
         return interestsList;
     }
-    public static List<Book> getUserStoryList() {
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public List<Book> getUserStoryList() {
         return userStoryList;
     }
-    public static void addInterest(String interest){
-        interestsList.add(interest);
-    }
-    public static void rateBook(Book book, float rate){
+
+    public void rateBook(Book book, int rate) {
         book.getRateData().add(rate);
         int sum = 0;
-        for(Float f: book.getRateData()){
-            sum+=f;
+        for (Integer i : book.getRateData()) {
+            sum += i;
         }
-        book.setRating(sum/book.getRateData().size());
-        REFERENCE_BOOK.child(book.getId()).child("rating").setValue(book.getRating());
+        book.setRating(sum / book.getRateData().size());
     }
-    public static  void markBookAsFavorite(Book book){
-        favoriteList.add(book);
+
+    public void markAsFavotite(Book book) {
+        this.favoriteList.add(book);
     }
-    public static boolean isFavorite(Book book){
-        return favoriteList.contains(book);
-    }
-    public static boolean downloadUserData(){
-        //Загрузка данных из базы
-        return false;
+
+    public boolean isFavorite(Book book) {
+        return this.favoriteList.contains(book);
     }
 
 

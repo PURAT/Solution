@@ -75,7 +75,6 @@ public class MenuActivity extends BaseActivity {
                     case R.id.actionItem4:
                         intent = new Intent(MenuActivity.this, ActivityItem4.class);
                         startActivity(intent);
-
                         break;
                 }
                 return false;
