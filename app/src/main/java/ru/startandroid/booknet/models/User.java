@@ -1,11 +1,13 @@
 package ru.startandroid.booknet.models;
 
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import ru.startandroid.booknet.models.Book;
 
-public class User {
+public class User{
     private  String name;
     private int age;
     private List<Book> userStoryList = new ArrayList<>();
@@ -33,8 +35,14 @@ public class User {
     public List<Book> getUserStoryList() {
         return userStoryList;
     }
+
     public void rateBook(Book book, int rate){
-        book.setRating(rate);
+        book.getRateData().add(rate);
+        int sum = 0;
+        for(Integer i: book.getRateData()){
+            sum+=i;
+        }
+        book.setRating(sum/book.getRateData().size());
     }
     public void markAsFavotite(Book book){
         this.favoriteList.add(book);

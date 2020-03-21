@@ -1,12 +1,16 @@
 package ru.startandroid.booknet.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Book implements Serializable {
+public class Book {
+    private String id;
     private String author;
     private String genre;
     private String country;
     private String name;
+    private List<Integer> rateData = new ArrayList<>();
     private int rating;
 
     public Book(String name, String author, String genre, String country) {
@@ -14,9 +18,23 @@ public class Book implements Serializable {
         this.genre = genre;
         this.country = country;
         this.name = name;
+        this.id=name+author+genre;
     }
 
-    public void setRating(int rating) {
+    public Book(){}
+
+    public String getId() {
+        return this.id;
+    }
+
+    public List<Integer> getRateData() {
+        return rateData;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+    public void setRating(int rating){
         this.rating = rating;
     }
 
