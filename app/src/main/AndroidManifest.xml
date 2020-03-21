@@ -11,17 +11,23 @@
         android:theme="@style/AppTheme">
 
         <activity
+            android:name=".activity.EmailPasswordActivity"
+            android:screenOrientation="unspecified" />
+        <activity
+            android:name=".activity.FireBaseTestActivity"
+            android:screenOrientation="unspecified" />
+        <activity
             android:name=".activity.ActivityItem3"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".activity.ActivityItem4"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".activity.ActivityItem2"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="unspecified">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,10 +36,10 @@
         </activity>
         <activity
             android:name=".activity.BaseActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".activity.MenuActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
     </application>
 
 </manifest>

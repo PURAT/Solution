@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import ru.startandroid.booknet.R;
 import ru.startandroid.booknet.models.*;
 
@@ -19,6 +22,9 @@ public class FireBaseTestActivity extends AppCompatActivity {
     EditText bookCountry;
     EditText bookGenre;
     Button addButton;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference reference = database.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -18,6 +18,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import ru.startandroid.booknet.R;
+import ru.startandroid.booknet.models.User;
+
+import static ru.startandroid.booknet.constants.Constants.REFERENCE_USER;
 
 public class EmailPasswordActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -36,10 +39,17 @@ public class EmailPasswordActivity extends AppCompatActivity {
         intent = new Intent(this, FireBaseTestActivity.class);
     }
 
+    private User createUser(String email){
+        User user = new User(email);
+        REFERENCE_USER.child(email).setValue(user);
+        return user;
+    }
+
     public void onClickSign(View view){
         String emailText = email.getText().toString();
         String passwordText = password.getText().toString();
         createAccount(emailText,passwordText);
+        createUser(emailText);
         startActivity(intent);
     }
 
