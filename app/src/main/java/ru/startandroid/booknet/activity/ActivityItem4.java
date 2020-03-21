@@ -27,9 +27,8 @@ public class ActivityItem4 extends BaseActivity {
         enableUpButton();
         onBackPressed();
 
-
         WebView myWebView = (WebView) findViewById(R.id.webview);
-        myWebView.loadUrl("https://vk.com/");
+        myWebView.loadUrl("https://vk.com/a.shtunder");
 
     }
 
