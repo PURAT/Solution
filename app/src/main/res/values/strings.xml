@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">BookNet</string>
 
+    <string name="app_name_after">Register</string>
+    <string name="text_bottom">Войдите в свою учётную запись</string>
+    <string name="btn_sign_in">Войти</string>
+    <string name="btn_sign_up">Зарегистрироваться</string>
+    <string name="password_field">Пароль ( > 5 символов )</string>
+    <string name="email_field">Email</string>
+    <string name="name_field">Имя</string>
+    <string name="surname_field">Фамилия</string>
+
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
 
