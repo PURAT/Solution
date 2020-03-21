@@ -8,51 +8,48 @@ import java.util.List;
 import ru.startandroid.booknet.models.Book;
 
 public class User{
-    private String name;
-    private String email;
-    private int age;
-    private List<Book> userStoryList = new ArrayList<>();
-    private List<String> interestsList = new ArrayList<>();
-    private List<Book> favoriteList = new ArrayList<>();
+    private static String name;
+    private static String email;
+    private static int age;
+    private static List<Book> userStoryList = new ArrayList<>();
+    private static List<String> interestsList = new ArrayList<>();
+    private static List<Book> favoriteList = new ArrayList<>();
 
     public User(){}
 
     public User(String email) {
-        this.email = email;
+        User.email = email;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public static void setName(String name) {
+        User.name = name;
     }
-    public String getName() {
+    public static String getName() {
         return name;
     }
-
-
-    public List<Book> getFavoriteList() {
+    public static List<Book> getFavoriteList() {
         return favoriteList;
     }
-
-    public void setAge(int age) {
-        this.age = age;
+    public static void setAge(int age) {
+        if(age>0){
+            if(age<200) {
+                User.age = age;
+            }
+        }
     }
-
-    public int getAge() {
+    public static int getAge() {
         return age;
     }
-
-    public List<String> getInterestsList() {
+    public static List<String> getInterestsList() {
         return interestsList;
     }
-
-    public List<Book> getUserStoryList() {
+    public static List<Book> getUserStoryList() {
         return userStoryList;
     }
-
-    public void addInterest(String interest){
-        this.interestsList.add(interest);
+    public static void addInterest(String interest){
+        interestsList.add(interest);
     }
-    public void rateBook(Book book, int rate){
+    public static void rateBook(Book book, int rate){
         book.getRateData().add(rate);
         int sum = 0;
         for(Integer i: book.getRateData()){
@@ -60,11 +57,15 @@ public class User{
         }
         book.setRating(sum/book.getRateData().size());
     }
-    public void markBookAsFavorite(Book book){
-        this.favoriteList.add(book);
+    public static  void markBookAsFavorite(Book book){
+        favoriteList.add(book);
     }
-    public boolean isFavorite(Book book){
-        return this.favoriteList.contains(book);
+    public static boolean isFavorite(Book book){
+        return favoriteList.contains(book);
+    }
+    public static boolean downloadUserData(){
+        //Загрузка данных из базы
+        return false;
     }
 
 

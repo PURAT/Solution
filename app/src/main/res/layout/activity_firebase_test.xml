@@ -27,7 +27,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="country"/>
-
+    <EditText
+        android:id="@+id/urlToDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="URL to download"/>
     <Button
         android:id="@+id/addButton"
         android:layout_width="match_parent"

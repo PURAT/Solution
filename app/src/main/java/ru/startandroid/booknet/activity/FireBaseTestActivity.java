@@ -10,6 +10,8 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.net.URL;
+
 import ru.startandroid.booknet.R;
 import ru.startandroid.booknet.models.*;
 
@@ -21,6 +23,7 @@ public class FireBaseTestActivity extends AppCompatActivity {
     EditText bookAuthor;
     EditText bookCountry;
     EditText bookGenre;
+    EditText urlToDownload;
     Button addButton;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -35,6 +38,7 @@ public class FireBaseTestActivity extends AppCompatActivity {
         bookAuthor = (EditText) findViewById(R.id.bookAuthor);
         bookGenre = (EditText) findViewById(R.id.bookGenre);
         bookCountry = (EditText) findViewById(R.id.bookCountry);
+        urlToDownload = (EditText) findViewById(R.id.urlToDownload);
         addButton = (Button) findViewById(R.id.addButton);
     }
     public void onClickSend(View view){

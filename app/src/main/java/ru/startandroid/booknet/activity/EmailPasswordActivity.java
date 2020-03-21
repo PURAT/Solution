@@ -7,20 +7,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.*;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
+import com.google.android.gms.tasks.*;
+import com.google.firebase.auth.*;
 import ru.startandroid.booknet.R;
 import ru.startandroid.booknet.models.User;
 
-import static ru.startandroid.booknet.constants.Constants.REFERENCE_USER;
+import static ru.startandroid.booknet.constants.Constants.*;
 
 public class EmailPasswordActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -49,14 +43,13 @@ public class EmailPasswordActivity extends AppCompatActivity {
         String emailText = email.getText().toString();
         String passwordText = password.getText().toString();
         createAccount(emailText,passwordText);
-        createUser(emailText);
+        CURRENT_USER = createUser(emailText);
         startActivity(intent);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
     }
 
