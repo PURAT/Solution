@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.BookRateActivity"></activity>
+        <activity android:name=".activity.Catalogue_Activity"></activity>
+        <activity android:name=".activity.BookPageActivity" />
         <activity
             android:name=".activity.EmailPasswordActivity"
             android:screenOrientation="unspecified" />

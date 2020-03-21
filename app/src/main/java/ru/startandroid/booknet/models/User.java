@@ -1,11 +1,18 @@
 package ru.startandroid.booknet.models;
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ru.startandroid.booknet.models.Book;
+
+import static ru.startandroid.booknet.constants.Constants.*;
 
 public class User{
     private static String name;
@@ -49,13 +56,14 @@ public class User{
     public static void addInterest(String interest){
         interestsList.add(interest);
     }
-    public static void rateBook(Book book, int rate){
+    public static void rateBook(Book book, float rate){
         book.getRateData().add(rate);
         int sum = 0;
-        for(Integer i: book.getRateData()){
-            sum+=i;
+        for(Float f: book.getRateData()){
+            sum+=f;
         }
         book.setRating(sum/book.getRateData().size());
+        REFERENCE_BOOK.child(book.getId()).child("rating").setValue(book.getRating());
     }
     public static  void markBookAsFavorite(Book book){
         favoriteList.add(book);

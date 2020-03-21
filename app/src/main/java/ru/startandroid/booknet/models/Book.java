@@ -12,7 +12,7 @@ public class Book {
     private String genre;
     private String country;
     private String name;
-    private List<Integer> rateData = new ArrayList<>();
+    private List<Float> rateData = new ArrayList<>();
     private int rating;
 
     public Book(String name, String author, String genre, String country) {
@@ -32,7 +32,7 @@ public class Book {
         return this.id;
     }
 
-    public List<Integer> getRateData() {
+    public List<Float> getRateData() {
         return rateData;
     }
 
