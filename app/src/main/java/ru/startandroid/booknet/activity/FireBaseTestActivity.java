@@ -1,4 +1,4 @@
-package ru.startandroid.booknet;
+package ru.startandroid.booknet.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import static ru.startandroid.booknet.Constants.*;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import ru.startandroid.booknet.R;
+import ru.startandroid.booknet.models.*;
+
+
+import static ru.startandroid.booknet.constants.Constants.*;
 
 public class FireBaseTestActivity extends AppCompatActivity {
     EditText bookName;

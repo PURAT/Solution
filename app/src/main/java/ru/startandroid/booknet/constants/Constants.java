@@ -1,4 +1,4 @@
-package ru.startandroid.booknet;
+package ru.startandroid.booknet.constants;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

@@ -1,9 +1,11 @@
-package ru.startandroid.booknet;
+package ru.startandroid.booknet.models;
 
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ru.startandroid.booknet.models.Book;
 
 public class User{
     private  String name;
