@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -14,13 +15,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import ru.startandroid.booknet.R;
+import ru.startandroid.booknet.adapters.ShopRecyclerViewAdapter;
+import ru.startandroid.booknet.helpers.SpacesItemDecoration;
+import ru.startandroid.booknet.models.Book;
 import ru.startandroid.booknet.utilities.ActivityUtilities;
 
 public class MenuActivity extends BaseActivity {
 
     private static final int LAYOUT = R.layout.activity_menu;
+
+    private RecyclerView shoppingRecyclerView;
 
     private Context context;
     private Activity activity;
@@ -35,12 +42,15 @@ public class MenuActivity extends BaseActivity {
         activity = MenuActivity.this;
         context = getApplicationContext();
 
-//        recyclerView = (RecyclerView) findViewById(R.id.rvContent);
-//        recyclerView.setLayoutManager(new GridLayoutManager(activity, 1, GridLayoutManager.VERTICAL, false));
-//
+        shoppingRecyclerView = (RecyclerView) findViewById(R.id.rvContent);
+        shoppingRecyclerView.setLayoutManager(new GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false));
+        shoppingRecyclerView.setHasFixedSize(true);
+        shoppingRecyclerView.addItemDecoration(new SpacesItemDecoration(2, 12, false));
+
+
 //        categoryList = new ArrayList<>();
-//        adapter = new CategoryAdapter(context, activity, categoryList);
-//        recyclerView.setAdapter(adapter);
+        ShopRecyclerViewAdapter shopAdapter = new ShopRecyclerViewAdapter(MenuActivity.this, getAllProductsOnSale());
+        shoppingRecyclerView.setAdapter(shopAdapter);
 
         initToolbar(getString(R.string.app_name));
         initNavigationView();
@@ -65,7 +75,7 @@ public class MenuActivity extends BaseActivity {
                     case R.id.actionItem1:
                         break;
                     case R.id.actionItem2:
-                        Intent intent = new Intent(MenuActivity.this, ActivityItem2.class);
+                        Intent intent = new Intent(MenuActivity.this, CheckoutActivity.class);
                         startActivity(intent);
                         break;
                     case R.id.actionItem3:
@@ -80,5 +90,15 @@ public class MenuActivity extends BaseActivity {
                 return false;
             }
         });
+    }
+
+    private List<Book> getAllProductsOnSale() {
+        List<Book> products = new ArrayList<Book>();
+        products.add(new Book("Sleek Black Top", 34, R.drawable.one, "Beautiffit and evenilk", "Classik", "Russia"));
+        products.add(new Book("Flare Black Gown", 56, R.drawable.two, "Beautiful sleek btfit and evening walk", "Classik", "USA"));
+        products.add(new Book("Flare White Blouse", 76, R.drawable.three, "Beautiful slit  evening walk", "Classik", "Russia"));
+        products.add(new Book("Blue Swed Gown", 23, R.drawable.four, "Beautiful sleekasual outfit and evening walk", "Classik", "Europe"));
+        products.add(new Book("Spotted Gown", 14, R.drawable.five, "Beautfit and evewalk", "Classik", "Russia"));
+        return products;
     }
 }

@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
+        <activity
+            android:name=".activity.CheckoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ProductActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.FireBaseTestActivity"
             android:screenOrientation="portrait" />
