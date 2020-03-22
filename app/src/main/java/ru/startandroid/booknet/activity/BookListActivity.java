@@ -3,7 +3,6 @@ package ru.startandroid.booknet.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,7 +35,7 @@ public class BookListActivity extends AppCompatActivity {
         bookListView = (ListView) findViewById(R.id.book_list_view);
         itemList = new ArrayList<>();
         booksList = new ArrayList<>();
-        booksAdapter = new ArrayAdapter<String>(this,R.layout.book_Info_item,R.id.bookInfo, itemList);
+        booksAdapter = new ArrayAdapter<String>(this,R.layout.book_info_item,R.id.bookInfo, itemList);
         REFERENCE_BOOKS.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

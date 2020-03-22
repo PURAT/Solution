@@ -123,6 +123,7 @@ public class MenuActivity extends BaseActivity {
         final MaterialEditText author = add_book_window.findViewById(R.id.book_author_field);
         final MaterialEditText genre = add_book_window.findViewById(R.id.book_genre_field);
         final MaterialEditText url = add_book_window.findViewById(R.id.book_url_field);
+        //final MaterialEditText price = add_book_window.findViewById(R.id.book_price_field);
 
         dialog.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
             @Override
@@ -156,7 +157,6 @@ public class MenuActivity extends BaseActivity {
                     Snackbar.make(root, "Введите ссылку на электронный вариант книги", Snackbar.LENGTH_LONG).show();
                     return;
                 }
-
 
                 Book book = new Book(nameText,authorText,genreText);
                 try {

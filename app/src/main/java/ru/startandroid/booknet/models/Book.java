@@ -10,6 +10,8 @@ public class Book {
     private String id;
     private String author;
     private String genre;
+    private int price;
+
     private String country;
     private String name;
     private List<Float> rateData = new ArrayList<>();
@@ -23,6 +25,14 @@ public class Book {
     }
 
     public Book(){}
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
 
     public void setReferenceToBook(URL url){
         this.referenceToBook = url;

@@ -13,6 +13,8 @@
     <string name="book_author_field">Автор книги</string>
     <string name="book_genre_field">Жанр книги</string>
     <string name="book_url_field">Ссылка на электронную книгу</string>
+    <string name="book_price_field">Цена</string>
+
 
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
