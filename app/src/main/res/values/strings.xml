@@ -13,9 +13,26 @@
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
 
-    <string name="menu_item_1">Аккаунт</string>
-    <string name="menu_item_2">Корзина</string>
-    <string name="menu_item_3">Настройки</string>
-    <string name="menu_item_4">О приложении</string>
+    <string name="menu_item_1">Account</string>
+    <string name="menu_item_2">Basket</string>
+    <string name="menu_item_3">Settings</string>
+    <string name="menu_item_4">About</string>
+
+    <string name="product_size">Author: Somebody</string>
+    <string name="product_color">Genre: Classic</string>
+    <string name="product_rating">Rating: 5</string>
+    <string name="product_price">Price: 80$</string>
+    <string name="action_cart">Shopping cart</string>
+    <string name="android_pay">Android Pay. Simple way to pay</string>
+    <string name="add_to_cart">ADD TO CART</string>
+    <string name="product">About Product</string>
+    <string name="continue_shopping">Continue shopping</string>
+    <string name="checkout">Checkout</string>
+    <string name="sub_total">Total:</string>
+    <string name="quantity">1</string>
+    <string name="product_name">Sleek black top</string>
+    <string name="price">100 $</string>
+    <string name="remove_from_cart">Remove</string>
+    <string name="basket">Basket</string>
 
 </resources>

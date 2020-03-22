@@ -31,12 +31,12 @@ public class FireBaseTestActivity extends AppCompatActivity {
         bookCountry = (EditText) findViewById(R.id.bookCountry);
         addButton = (Button) findViewById(R.id.addButton);
     }
-    public void onClickSend(View view){
-        String name = bookName.getText().toString();
-        String author = bookAuthor.getText().toString();
-        String genre = bookGenre.getText().toString();
-        String country = bookCountry.getText().toString();
-        Book book = new Book(name,author,genre,country);
-        REFERENCE_BOOK.child(book.getId()).setValue(book);
-    }
+//    public void onClickSend(View view){
+//        String name = bookName.getText().toString();
+//        String author = bookAuthor.getText().toString();
+//        String genre = bookGenre.getText().toString();
+//        String country = bookCountry.getText().toString();
+//        Book book = new Book(name,author,genre,country);
+//        REFERENCE_BOOK.child(book.getId()).setValue(book);
+//    }
 }
