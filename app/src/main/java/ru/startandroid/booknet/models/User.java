@@ -17,7 +17,6 @@ public class User {
     private String email;
 
     private String userId;
-
     private List<String> interestsList = new ArrayList<>();
     private List<Book> favoriteList = new ArrayList<>();
     private List<Book> userStoryList = new ArrayList<>();
@@ -28,6 +27,10 @@ public class User {
     public User(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public void setInterestsList(List<String> interestsList) {
+        this.interestsList = interestsList;
     }
 
     public String getUserId() {

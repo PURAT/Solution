@@ -53,10 +53,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Test
-        Intent i = new Intent(this, BookListActivity.class);
-        startActivity(i);
-
         register = (Button) findViewById(R.id.button_sign_up);
         signIn = (Button) findViewById(R.id.button_sign_in);
         root = findViewById(R.id.start_window);

@@ -14,6 +14,14 @@
     <string name="book_genre_field">Жанр книги</string>
     <string name="book_url_field">Ссылка на электронную книгу</string>
     <string name="book_price_field">Цена</string>
+    <string name="book_country_field">Страна</string>
+
+    <string name="user_name_const">Имя пользователя:  </string>
+    <string name="user_name">undefined</string>
+    <string name="user_email_const">E-mail: </string>
+    <string name="user_email">undefined</string>
+    <string name="interests">Интересы:</string>
+
 
 
     <string name="view_navigation_open">Open</string>

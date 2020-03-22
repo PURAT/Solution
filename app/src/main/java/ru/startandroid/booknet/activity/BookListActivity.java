@@ -31,28 +31,7 @@ public class BookListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_list);
-        book = new Book();
-        bookListView = (ListView) findViewById(R.id.book_list_view);
-        itemList = new ArrayList<>();
-        booksList = new ArrayList<>();
-        booksAdapter = new ArrayAdapter<String>(this,R.layout.book_info_item,R.id.bookInfo, itemList);
-        REFERENCE_BOOKS.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds:dataSnapshot.getChildren()){
-                       book = ds.getValue(Book.class);
-                       booksList.add(book);
-                       itemList.add("Название: "+book.getName()+"\n"+"Автор: "+book.getAuthor()+"\n"+"Жанр: "+book.getGenre());
-                }
-                bookListView.setAdapter(booksAdapter);
-                System.out.println(itemList);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+        getDataBook();
         bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -60,5 +39,7 @@ public class BookListActivity extends AppCompatActivity {
         });
     }
 
+    public void getDataBook(){
+    }
 
 }

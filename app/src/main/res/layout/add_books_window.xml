@@ -71,6 +71,22 @@
             app:met_singleLineEllipsis="true"
             app:met_baseColor="@android:color/black"
             app:met_primaryColor="@color/material_text" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/book_img_int_field"
+            android:hint="img int"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
+            android:textSize="20sp"
+
+            app:met_floatingLabel="highlight"
+            app:met_singleLineEllipsis="true"
+            app:met_baseColor="@android:color/black"
+            app:met_primaryColor="@color/material_text" />
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

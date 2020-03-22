@@ -3,6 +3,7 @@ package ru.startandroid.booknet.models;
 import android.media.Image;
 
 import java.io.Serializable;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +14,10 @@ public class Book {
     private String country;
     private String name;
     private double price;
-    private List<Integer> rateData = new ArrayList<>();
+    private List<Float> rateData = new ArrayList<>();
     private int rating;
     private int image;
+    private URL url;
 
     public Book(String name, double price, int image, String author, String genre, String country) {
         this.author = author;
@@ -34,7 +36,7 @@ public class Book {
         return this.id;
     }
 
-    public List<Integer> getRateData() {
+    public List<Float> getRateData() {
         return rateData;
     }
 
@@ -76,5 +78,12 @@ public class Book {
 
     public double getPrice() {
         return price;
+    }
+
+    public void setReferenceToBook(URL url) {
+        this.url = url;
+    }
+    public URL getUrl(){
+        return this.url;
     }
 }
