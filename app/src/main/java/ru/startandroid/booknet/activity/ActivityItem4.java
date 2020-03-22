@@ -11,7 +11,7 @@ import ru.startandroid.booknet.utilities.ActivityUtilities;
 public class ActivityItem4 extends BaseActivity {
 
     private Activity mActivity;
-
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

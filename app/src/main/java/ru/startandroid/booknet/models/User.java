@@ -7,12 +7,16 @@ import java.util.List;
 
 import ru.startandroid.booknet.models.Book;
 
+import static ru.startandroid.booknet.constants.Constants.REFERENCE_BOOKS;
+
 public class User {
     private String name;
     private String surname;
     private int age;
     private String password;
     private String email;
+
+    private String userId;
 
     private List<String> interestsList = new ArrayList<>();
     private List<Book> favoriteList = new ArrayList<>();
@@ -26,6 +30,13 @@ public class User {
         this.age = age;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
     public void setSurname(String surname) {
         this.surname = surname;
@@ -72,13 +83,14 @@ public class User {
         return userStoryList;
     }
 
-    public void rateBook(Book book, int rate) {
+    public void rateBook(Book book, float rate) {
         book.getRateData().add(rate);
         int sum = 0;
-        for (Integer i : book.getRateData()) {
-            sum += i;
+        for (Float f : book.getRateData()) {
+            sum += f;
         }
         book.setRating(sum / book.getRateData().size());
+        REFERENCE_BOOKS.child(book.getId()).child("rating").setValue(book.getRating());
     }
 
     public void markAsFavotite(Book book) {

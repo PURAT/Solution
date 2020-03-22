@@ -7,7 +7,7 @@ import ru.startandroid.booknet.models.User;
 
 public class Constants {
 public static FirebaseDatabase DATABASE = FirebaseDatabase.getInstance();
-public static DatabaseReference REFERENCE_BOOK = DATABASE.getReference("Books");
-public static DatabaseReference REFERENCE_USER = DATABASE.getReference("Users");
+public static DatabaseReference REFERENCE_BOOKS = DATABASE.getReference("Books");
+public static DatabaseReference REFERENCE_USERS = DATABASE.getReference("Users");
 public static User CURRENT_USER;
 }

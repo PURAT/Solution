@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,22 +20,32 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import ru.startandroid.booknet.R;
+import static ru.startandroid.booknet.constants.Constants.*;
+
+import ru.startandroid.booknet.models.Book;
 import ru.startandroid.booknet.models.User;
 
 public class MainActivity extends AppCompatActivity {
-
     private Toast backToast;
     private long backPressedMillis;
 
     Button register, signIn;
     FirebaseAuth auth;
-    FirebaseDatabase db;
-    DatabaseReference users;
     RelativeLayout root;
 
     @Override
@@ -42,13 +53,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Test
+        Intent i = new Intent(this, BookListActivity.class);
+        startActivity(i);
+
         register = (Button) findViewById(R.id.button_sign_up);
         signIn = (Button) findViewById(R.id.button_sign_in);
         root = findViewById(R.id.start_window);
 
         auth = FirebaseAuth.getInstance();
-        db = FirebaseDatabase.getInstance();
-        users = db.getReference("Users");
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,13 +172,13 @@ public class MainActivity extends AppCompatActivity {
                             .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
-                                    User user = new User();
-                                    user.setEmail(emailText);
-                                    user.setPassword(passwordText);
-                                    user.setName(nameText);
-                                    user.setSurname(surNameText);
-
-                                    users.child(FirebaseAuth.getInstance().getCurrentUser().getUid().toString()).setValue(user);
+                                    CURRENT_USER = new User();
+                                    CURRENT_USER.setEmail(emailText);
+                                    CURRENT_USER.setPassword(passwordText);
+                                    CURRENT_USER.setName(nameText);
+                                    CURRENT_USER.setSurname(surNameText);
+                                    CURRENT_USER.setUserId(FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
+                                    REFERENCE_USERS.child(CURRENT_USER.getUserId()).setValue(CURRENT_USER);
                                 }
                             }).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override

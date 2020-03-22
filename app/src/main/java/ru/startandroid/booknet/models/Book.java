@@ -13,12 +13,11 @@ public class Book {
     private String country;
     private String name;
     private List<Float> rateData = new ArrayList<>();
-    private int rating;
+    private float rating;
 
-    public Book(String name, String author, String genre, String country) {
+    public Book(String name, String author, String genre) {
         this.author = author;
         this.genre = genre;
-        this.country = country;
         this.name = name;
         this.id=name+"-"+author+"-"+genre;
     }
@@ -28,6 +27,8 @@ public class Book {
     public void setReferenceToBook(URL url){
         this.referenceToBook = url;
     }
+    public void setCountry(String country){ this.country = country; }
+
     public String getId() {
         return this.id;
     }
@@ -36,10 +37,10 @@ public class Book {
         return rateData;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
-    public void setRating(int rating){
+    public void setRating(float rating){
         this.rating = rating;
     }
 
