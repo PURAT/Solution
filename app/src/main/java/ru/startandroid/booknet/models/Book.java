@@ -1,56 +1,48 @@
 package ru.startandroid.booknet.models;
 
+import android.media.Image;
+
 import java.io.Serializable;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
-    private URL referenceToBook;
     private String id;
     private String author;
     private String genre;
-    private int price;
-
     private String country;
     private String name;
-    private List<Float> rateData = new ArrayList<>();
-    private float rating;
+    private double price;
+    private List<Integer> rateData = new ArrayList<>();
+    private int rating;
+    private int image;
 
-    public Book(String name, String author, String genre) {
+    public Book(String name, double price, int image, String author, String genre, String country) {
         this.author = author;
         this.genre = genre;
+        this.country = country;
         this.name = name;
-        this.id=name+"-"+author+"-"+genre;
-    }
-
-    public Book(){}
-
-    public void setPrice(int price) {
+        this.id = name + author + genre;
+        this.image = image;
         this.price = price;
     }
 
-    public int getPrice() {
-        return price;
+    public Book() {
     }
-
-    public void setReferenceToBook(URL url){
-        this.referenceToBook = url;
-    }
-    public void setCountry(String country){ this.country = country; }
 
     public String getId() {
         return this.id;
     }
 
-    public List<Float> getRateData() {
+    public List<Integer> getRateData() {
         return rateData;
     }
 
-    public float getRating() {
+    public int getRating() {
         return rating;
     }
-    public void setRating(float rating){
+
+    public void setRating(int rating) {
         this.rating = rating;
     }
 
@@ -68,5 +60,21 @@ public class Book {
 
     public String getCountry() {
         return country;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }

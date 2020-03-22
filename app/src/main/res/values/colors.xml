@@ -2,7 +2,8 @@
 <resources>
     <!--Auth-->
     <color name="colorPrimary">#222020</color>
-    <color name="colorPrimaryDark">#009688</color>
+    <!-- <color name="colorPrimary">#C5C53C</color> -->
+    <!--   <color name="colorPrimaryDark">#009688</color> -->
     <color name="colorAccent">#64605F</color>
     <color name="colorFewWhile">#272626</color>
     <color name="ripple_effect1">#D2DB1F</color>
@@ -13,6 +14,12 @@
     <color name="btn_sign_in_stroke">#E2AA6D</color>
     <color name="material_text">#DBC930</color>
     <color name="bground">#F0F4C3</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="colorPrimaryLight">#F0F4C3</color>
+    <color name="icons">#ffffff</color>
+    <color name="colorPrimaryDark">#AFB42B</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorDivider">#BDBDBD</color>
 
     <!--Menu-->
     <color name="colorPrimaryToolbar">#CDDC39</color>

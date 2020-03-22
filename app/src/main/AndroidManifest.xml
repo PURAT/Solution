@@ -11,16 +11,27 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.BookListActivity" />
+
+
+        <activity
+            android:name=".activity.CheckoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ProductActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FireBaseTestActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ActivityItem3"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".activity.ActivityItem4"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="unspecified">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,13 +40,13 @@
         </activity>
         <activity
             android:name=".activity.ActivityItem2"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.BaseActivity"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MenuActivity"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
