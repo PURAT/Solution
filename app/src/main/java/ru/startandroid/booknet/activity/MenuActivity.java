@@ -3,9 +3,15 @@ package ru.startandroid.booknet.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -16,6 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import ru.startandroid.booknet.R;
 import ru.startandroid.booknet.adapters.ShopRecyclerViewAdapter;
@@ -28,10 +35,14 @@ public class MenuActivity extends BaseActivity {
     private static final int LAYOUT = R.layout.activity_menu;
 
     private RecyclerView shoppingRecyclerView;
+    private Animation animation;
 
+    private long backPressedMillis;
     private Context context;
     private Activity activity;
     private DrawerLayout drawerLayout;
+    private VideoView videoView;
+    private ImageView imageView, image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,21 +53,32 @@ public class MenuActivity extends BaseActivity {
         activity = MenuActivity.this;
         context = getApplicationContext();
 
+        image = (ImageView) findViewById(R.id.image);
+        imageView = (ImageView) findViewById(R.id.recent_news_image);
+        videoView = (VideoView) findViewById(R.id.video);
         shoppingRecyclerView = (RecyclerView) findViewById(R.id.rvContent);
         shoppingRecyclerView.setLayoutManager(new GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false));
         shoppingRecyclerView.setHasFixedSize(true);
         shoppingRecyclerView.addItemDecoration(new SpacesItemDecoration(2, 12, false));
+        animation = AnimationUtils.loadAnimation(this, R.anim.zoomin);
 
-
-//        categoryList = new ArrayList<>();
         ShopRecyclerViewAdapter shopAdapter = new ShopRecyclerViewAdapter(MenuActivity.this, getAllProductsOnSale());
         shoppingRecyclerView.setAdapter(shopAdapter);
 
         initToolbar(getString(R.string.app_name));
         initNavigationView();
-//        initListener();
-//        loadData();
 
+//        imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                videoPlay(v);
+//                backPressedMillis = System.currentTimeMillis();
+//                if (backPressedMillis + 2000)
+//                imageView.setVisibility(View.INVISIBLE);
+//                    image.startAnimation(animation);
+//                    image.setVisibility(View.VISIBLE);
+//            }
+//        });
     }
 
     private void initNavigationView() {
@@ -90,6 +112,14 @@ public class MenuActivity extends BaseActivity {
                 return false;
             }
         });
+    }
+
+    public void videoPlay(View v) {
+        String pathVideo = "android.resource://ru.startandroid.booknet/" + R.raw.one;
+        Uri uri = Uri.parse(pathVideo);
+        videoView.setVideoURI(uri);
+        videoView.start();
+        imageView.setVisibility(View.INVISIBLE);
     }
 
     private List<Book> getAllProductsOnSale() {
